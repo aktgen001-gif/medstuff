@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medical Student Portfolio - Akhilesh Tiwari">
+    <title>Dr. Akhilesh Tiwari - Medical Professional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .description {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 1rem auto;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid white;
+        }
+
+        .primary-btn {
+            background: white;
+            color: #0066cc;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: white;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        section h2 {
+            color: #0066cc;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .card .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .avatar {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin: 0 auto;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            background: #0066cc;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #0066cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #004499;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .avatar {
+                width: 150px;
+                height: 150px;
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container" style="max-width: 1200px;">
+            <div class="logo">AT</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Akhilesh Tiwari</h1>
+            <p class="subtitle">Medical Professional & Future Physician</p>
+            <p class="description">Committed to providing compassionate healthcare and advancing medical knowledge through dedication, continuous learning, and patient-centered care.</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-button primary-btn">Get In Touch</a>
+                <a href="#experience" class="cta-button secondary-btn">My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I am a dedicated medical student passionate about delivering excellent patient care and contributing to medical advancement. My academic journey has equipped me with strong clinical knowledge and practical skills essential for modern medicine.</p>
+                    <p>With a keen interest in clinical practice, I am committed to developing expertise in diagnostic acumen and therapeutic decision-making. I believe in lifelong learning and staying updated with evidence-based medicine.</p>
+                    <p>Beyond the classroom, I'm enthusiastic about community health initiatives and mentoring fellow students.</p>
+                </div>
+                <div class="avatar">👨‍⚕️</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2>Education & Academic Credentials</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Medical Degree (MD/MBBS)</h3>
+                    <p class="meta">Medical School University</p>
+                    <p>Comprehensive medical education covering clinical sciences, internal medicine, surgery, and specialty rotations.</p>
+                </div>
+                <div class="card">
+                    <h3>Bachelor's Degree</h3>
+                    <p class="meta">Pre-Medical Sciences</p>
+                    <p>Strong foundation in biology, chemistry, and physiology. Developed critical thinking and research skills.</p>
+                </div>
+                <div class="card">
+                    <h3>Board Certifications</h3>
+                    <p class="meta">Professional Licenses</p>
+                    <p>Licensed medical professional with ongoing certification and continuing medical education (CME).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinical Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2>Clinical Experience</h2>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>Internal Medicine Rotation</h3>
+                    <p class="meta">Major Hospital | 3 Months</p>
+                    <p>Managed diverse patient cases, developed diagnostic skills, and gained experience in evidence-based treatment approaches.</p>
+                </div>
+                <div class="card">
+                    <h3>Surgery Department Internship</h3>
+                    <p class="meta">Teaching Hospital | 2 Months</p>
+                    <p>Assisted in surgical procedures, learned perioperative care, and developed procedural competencies.</p>
+                </div>
+                <div class="card">
+                    <h3>Emergency Department Rotation</h3>
+                    <p class="meta">City Medical Center | 6 Weeks</p>
+                    <p>Gained experience in acute care management, triage protocols, and emergency medicine decision-making.</p>
+                </div>
+                <div class="card">
+                    <h3>Community Health Initiative</h3>
+                    <p class="meta">Local Health Clinic | Ongoing</p>
+                    <p>Provided basic healthcare services and health education to underserved populations.</p>
+                </div>
+                <div class="card">
+                    <h3>Research Project</h3>
+                    <p class="meta">Academic Institution</p>
+                    <p>Conducted original research contributing to medical knowledge and publications in peer-reviewed journals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section>
+        <div class="container">
+            <h2>Clinical Skills & Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Patient Assessment</div>
+                <div class="skill-tag">Diagnosis</div>
+                <div class="skill-tag">Clinical Reasoning</div>
+                <div class="skill-tag">Procedural Skills</div>
+                <div class="skill-tag">Patient Communication</div>
+                <div class="skill-tag">Team Collaboration</div>
+                <div class="skill-tag">Medical Documentation</div>
+                <div class="skill-tag">Evidence-Based Medicine</div>
+                <div class="skill-tag">Electronic Health Records</div>
+                <div class="skill-tag">Research Methods</div>
+                <div class="skill-tag">Leadership</div>
+                <div class="skill-tag">Time Management</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p style="margin: 2rem 0; font-size: 1.1rem;">I'm interested in opportunities to grow as a physician and make a meaningful impact in healthcare. Feel free to reach out!</p>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:akhilesh@example.com" style="color: #0066cc; text-decoration: none;">akhilesh@example.com</a></p>
+                </div>
+                <div class="card">
+                    <h3>📱 Phone</h3>
+                    <p><a href="tel:+91-XXXXXXXXXX" style="color: #0066cc; text-decoration: none;">+91-XXXXXXXXXX</a></p>
+                </div>
+                <div class="card">
+                    <h3>📍 Location</h3>
+                    <p>Your City, Country</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Connect With Me</h3>
+            <div class="social-links">
+                <a href="#" title="LinkedIn">in</a>
+                <a href="#" title="Twitter">tw</a>
+                <a href="#" title="ResearchGate">rg</a>
+            </div>
+            <p>&copy; 2026 Akhilesh Tiwari. All rights reserved.</p>
+            <p>Medical Professional | Physician-in-Training</p>
+        </div>
+    </footer>
+</body>
+</html>
